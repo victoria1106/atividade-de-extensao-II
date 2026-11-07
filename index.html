@@ -11,6 +11,26 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="d-bolo" viewBox="0 0 130 100">
+    <ellipse cx="65" cy="88" rx="62" ry="8" fill="#fbe9d0"/><rect x="26" y="52" width="78" height="36" rx="4" fill="#8a4b2e"/><rect x="26" y="42" width="78" height="12" rx="3" fill="#fbe9d0"/><rect x="33" y="30" width="64" height="14" rx="4" fill="#cf3f24"/><circle cx="65" cy="25" r="7" fill="#cf3f24"/><path d="M65 18c1-8 5-10 8-12" stroke="#4a7a3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="d-cesta" viewBox="0 0 130 100">
+    <path d="M30 44c0-30 22-40 35-40s35 10 35 40" stroke="#7a4a22" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="48" cy="40" r="8" fill="#d6401f"/><circle cx="66" cy="34" r="8" fill="#f1b72b"/><circle cx="84" cy="42" r="8" fill="#2a8f86"/><path d="M14 46h102l-14 48H28z" fill="#c8884a"/><path d="M14 46h102M20 66h90M65 46v48M42 46l4 48M88 46l-4 48" stroke="#7a4a22" stroke-width="3" fill="none"/>
+  </symbol>
+  <symbol id="d-bolsa" viewBox="0 0 130 100">
+    <path d="M48 38V26c0-14 10-20 17-20s17 6 17 20v12" stroke="#c8d4e6" stroke-width="6" fill="none" stroke-linecap="round"/><rect x="30" y="36" width="70" height="58" rx="5" fill="#1f7b88"/><g fill="#fbe9d0"><circle cx="48" cy="54" r="4.5"/><circle cx="76" cy="50" r="4.5"/><circle cx="62" cy="68" r="4.5"/><circle cx="88" cy="72" r="4.5"/><circle cx="46" cy="80" r="4.5"/></g>
+  </symbol>
+</svg>
+
+<div class="deco" aria-hidden="true">
+  <svg class="d d1" viewBox="0 0 130 100"><use href="#d-bolo"/></svg>
+  <svg class="d d2" viewBox="0 0 130 100"><use href="#d-cesta"/></svg>
+  <svg class="d d3" viewBox="0 0 130 100"><use href="#d-bolsa"/></svg>
+  <svg class="d d4" viewBox="0 0 130 100"><use href="#d-bolo"/></svg>
+</div>
+
 <div class="wrap">
   <header class="hero">
     <p class="tag">Vizinho Empreendedor</p>
@@ -27,6 +47,22 @@
     <p class="count" id="count" aria-live="polite"></p>
     <ul class="grid" id="grid"></ul>
     <div class="empty" id="empty" hidden></div>
+
+    <section class="about" aria-labelledby="aboutTitle">
+  <h2 id="aboutTitle">Sobre nós</h2>
+  <p>Este site nasceu como um projeto de extensão do curso de Análise e Desenvolvimento de Sistemas, dentro do programa Inova Mais, com foco em empreendedorismo. A ideia é simples: usar tecnologia para dar visibilidade a quem produz e vende por aqui.</p>
+  <p>Muitos pequenos empreendedores fazem um trabalho de qualidade, mas não têm um lugar para mostrar o que vendem. A vitrine reúne esses produtos e serviços em um só lugar, para que as pessoas da comunidade encontrem e comprem de quem é daqui.</p>
+
+  <h3>Nossos objetivos</h3>
+  <ul class="goals">
+    <li>Dar visibilidade a pequenos empreendedores da comunidade.</li>
+    <li>Aproximar quem vende de quem compra, com contato direto pelo WhatsApp.</li>
+    <li>Incentivar o consumo local e fortalecer a economia da região.</li>
+    <li>Aplicar na prática o que aprendemos no curso, criando uma solução real.</li>
+  </ul>
+
+  <p>Quer participar? Preencha o formulário abaixo e entraremos em contato.</p>
+</section>
 
     <section class="join" aria-labelledby="joinTitle">
       <h2 id="joinTitle">Quer aparecer na vitrine?</h2>

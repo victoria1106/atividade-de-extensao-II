@@ -108,3 +108,53 @@ form select{
   .sticky-cta{display:block;position:fixed;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:5;padding:14px;text-align:center;font-weight:600;color:var(--bg);background:var(--coral);border-radius:12px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.4)}
   .sticky-cta.off{display:none}
 }
+
+.about{
+  margin:48px 0 0;
+  padding:32px 24px;
+  text-align:center;
+  background:var(--card);
+  border:2px solid var(--line);
+  border-radius:14px;
+}
+.about{
+  margin:48px 0 0;
+  padding:32px 28px;
+  background:transparent;
+  border:2px solid var(--line);
+  border-radius:14px;
+}
+.about h2{margin:0 0 18px;text-align:center;font-size:clamp(1.5rem,5vw,2rem);font-weight:800;letter-spacing:-.02em}
+.about p{max-width:36em;margin:0 auto 14px;color:var(--muted);text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.about h3{margin:28px 0 14px;text-align:center;font-size:1.05rem;font-weight:600}
+.goals{display:grid;gap:12px;max-width:36em;margin:0 auto 22px;padding:0;list-style:none}
+.goals li{position:relative;padding-left:26px;text-align:left}
+.goals li::before{content:"";position:absolute;left:4px;top:.7em;width:5px;height:5px;background:var(--muted);border-radius:50%}
+@media (max-width:480px){.about{padding:24px 18px}}
+
+.join{text-align:center}
+.join .lead{margin-left:auto;margin-right:auto}
+.join form{margin-left:auto;margin-right:auto;text-align:left}
+.join .btn{justify-self:center}
+.join .done{max-width:520px;margin:22px auto 0}
+@media (max-width:480px){.join .btn{justify-self:stretch}}
+
+/* ===== Fundo de pontinhos (PC e celular) ===== */
+body{
+  position:relative;
+  background-color:var(--bg);
+  background-image:radial-gradient(circle,rgba(192,179,218,.16) 1.2px,transparent 1.6px);
+  background-size:28px 28px;
+}
+.wrap{position:relative;z-index:1}
+
+/* ===== Figuras nas laterais (só telas largas) ===== */
+.deco{display:none}
+@media (min-width:1240px){
+  .deco{display:block;position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .deco .d{position:absolute;width:clamp(110px,calc((100vw - 960px)/2 - 50px),260px);height:auto;opacity:.22}
+  .d1{top:9%;  left:calc((100vw - 960px)/4);  transform:translateX(-50%) rotate(-10deg)}
+  .d2{top:30%; right:calc((100vw - 960px)/4); transform:translateX(50%)  rotate(8deg)}
+  .d3{top:55%; left:calc((100vw - 960px)/4);  transform:translateX(-50%) rotate(7deg)}
+  .d4{top:78%; right:calc((100vw - 960px)/4); transform:translateX(50%)  rotate(-8deg)}
+}
