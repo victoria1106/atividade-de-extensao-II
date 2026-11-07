@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Compre de quem é daqui</title>
+<meta name="description" content="Conheça os pequenos empreendedores e encontre produtos e serviços pertinho de você.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="tag">Vizinho Empreendedor</p>
+    <h1>Compre de quem é <span>daqui.</span></h1>
+    <p class="lead">Conheça os pequenos empreendedores daqui e encontre produtos e serviços pertinho de você.</p>
+  </header>
+
+  <main>
+    <div class="search">
+      <label for="q">Buscar produto ou serviço</label>
+      <input id="q" type="search" placeholder="Ex.: bolo, cesta, ecobag" autocomplete="off" enterkeyhint="search">
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por categoria"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <ul class="grid" id="grid"></ul>
+    <div class="empty" id="empty" hidden></div>
+
+    <section class="join" aria-labelledby="joinTitle">
+      <h2 id="joinTitle">Quer aparecer na vitrine?</h2>
+      <p class="lead">Conte o que você faz. Entraremos em contato para combinar a publicação.</p>
+      <form id="form" novalidate>
+        <label>Seu nome
+          <input name="nome" autocomplete="name" required>
+          <span class="err" data-for="nome"></span>
+        </label>
+        <label>O que você oferece
+          <input name="produto" placeholder="Ex.: bolos caseiros" required>
+          <span class="err" data-for="produto"></span>
+        </label>
+        <label>Categoria
+          <select name="cat" required></select>
+          <span class="err" data-for="cat"></span>
+        </label>
+        <label>WhatsApp com DDD
+          <input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(16) 90000-0000" required>
+          <span class="err" data-for="tel"></span>
+        </label>
+        <button class="btn" type="submit">Quero participar</button>
+      </form>
+      <div class="done" id="done" role="status" hidden></div>
+    </section>
+  </main>
+
+  <footer>Projeto de extensão universitária. </footer>
+</div>
+
+<a class="sticky-cta" id="sticky" href="#joinTitle">Se inscrever na vitrine</a>
+
+<script src="script.js"></script>
+</body>
+</html>

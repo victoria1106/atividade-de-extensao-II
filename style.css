@@ -1,0 +1,110 @@
+:root{
+  color-scheme:dark;
+  --bg:#141a22; --card:#251a3b; --line:#2c3b50; --text:#f5ede0; --muted:#a9b6c8; --coral:#b79cff; --ok:#7fd8a6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+
+header.hero{padding:40px 0 8px}
+.tag{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.tag::before{content:"";width:12px;height:12px;background:var(--coral)}
+h1{margin:0;font-weight:800;font-size:clamp(2.2rem,9vw,4.2rem);line-height:1.05;letter-spacing:-.03em}
+h1 span{color:var(--coral)}
+.lead{max-width:34em;margin:14px 0 0;color:var(--muted);font-size:1.05rem}
+.lead strong{color:var(--text)}
+
+.search{margin:32px 0 16px}
+.search label{display:block;margin-bottom:8px;font-size:.9rem;font-weight:600}
+.search input{width:100%;padding:14px 16px;font:inherit;font-size:1rem;color:var(--text);background:var(--card);border:2px solid var(--line);border-radius:10px}
+.search input::placeholder{color:#7e8da3}
+.search input:focus{border-color:var(--coral);outline:none}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px}
+.chip{padding:10px 18px;font:inherit;font-size:.9rem;font-weight:600;color:var(--text);background:transparent;border:2px solid var(--line);border-radius:999px;cursor:pointer;min-height:44px}
+.chip:hover{border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.count{margin:0 0 18px;color:var(--muted);font-size:.85rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin:0 0 24px;padding:0;list-style:none}
+.card{display:flex;flex-direction:column;overflow:hidden;background:var(--card);border:2px solid var(--line);border-radius:14px}
+.art{display:grid;place-items:center;height:150px}
+.art svg{width:120px;height:auto}
+.body{display:flex;flex:1;flex-direction:column;padding:16px}
+.cat{margin:0;color:var(--muted);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.card h2{margin:4px 0 2px;font-size:1.2rem;font-weight:600}
+.by{margin:0;color:var(--muted);font-size:.85rem}
+.price{margin:10px 0 14px;font-weight:600}
+.contact{margin-top:auto;display:block;padding:12px;text-align:center;font-weight:500;color:var(--muted);text-decoration:none;border:2px dashed var(--line);border-radius:8px}
+a.contact{color:var(--bg);background:var(--ok);border:2px solid var(--ok);font-weight:600}
+a.contact:hover{filter:brightness(1.08)}
+
+.empty{padding:28px 20px;text-align:center;color:var(--muted);border:2px dashed var(--line);border-radius:14px}
+.empty strong{display:block;margin-bottom:4px;color:var(--text)}
+
+.join{margin:48px 0 0;padding:32px 0 40px;border-top:2px solid var(--line)}
+.join h2{margin:0 0 6px;font-size:clamp(1.5rem,5vw,2rem);font-weight:800;letter-spacing:-.02em}
+.join p.lead{margin-top:0}
+form{display:grid;gap:14px;max-width:520px;margin-top:22px}
+form label{display:grid;gap:6px;font-size:.9rem;font-weight:600}
+form input,form select{width:100%;padding:13px 14px;font:inherit;font-size:1rem;color:var(--text);background:var(--card);border:2px solid var(--line);border-radius:10px}
+form input:focus,form select:focus{border-color:var(--coral);outline:none}
+.err{min-height:1.1em;color:#ffb3a0;font-size:.8rem;font-weight:400}
+.btn{justify-self:start;padding:15px 36px;font:inherit;font-weight:600;color:var(--bg);background:var(--text);border:0;cursor:pointer;min-height:48px;clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%)}
+.btn:hover{background:#fff}
+.done{padding:16px;color:var(--ok);border:2px solid var(--ok);border-radius:10px;font-weight:500}
+[hidden]{display:none!important}
+footer{padding:20px 0 32px;color:var(--muted);font-size:.8rem;border-top:2px solid var(--line)}
+@media (max-width:480px){.wrap{padding:0 16px}.btn{justify-self:stretch;clip-path:none;border-radius:10px}}
+
+.art.foto{height:auto;aspect-ratio:5/3;padding:0}
+.art img{display:block;width:100%;height:100%;object-fit:cover}
+.by{margin-bottom:14px}
+
+.done a{color:inherit;font-weight:600}
+
+/* ===== Ajustes para celular ===== */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+img,svg{max-width:100%}
+#joinTitle{scroll-margin-top:24px}
+
+/* campos iguais em iPhone e Android */
+input,select{-webkit-appearance:none;appearance:none}
+form select{
+  padding-right:42px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' fill='none' stroke='%23c0b3da' stroke-width='2'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+}
+
+/* no toque não existe hover: evita botão "preso" depois de tocar */
+@media (hover:none){
+  .chip:not([aria-pressed="true"]):hover{border-color:var(--line)}
+  .btn:hover{background:var(--text)}
+  a.contact:hover{filter:none}
+}
+
+@media (max-width:480px){
+  header.hero{padding:28px 0 4px}
+  h1{font-size:clamp(2rem,10.5vw,2.6rem)}
+  .search{margin:24px 0 14px}
+  /* filtros em uma linha, deslizando para o lado */
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 12px;padding:2px 16px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto;white-space:nowrap}
+  .grid{grid-template-columns:1fr;gap:16px}
+  .join{margin-top:36px;padding-top:26px}
+}
+
+.sticky-cta{display:none}
+@media (max-width:480px){
+  body{padding-bottom:84px}
+  .sticky-cta{display:block;position:fixed;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:5;padding:14px;text-align:center;font-weight:600;color:var(--bg);background:var(--coral);border-radius:12px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+  .sticky-cta.off{display:none}
+}
