@@ -99,3 +99,5 @@ form.addEventListener("submit", e => {
 const barra = $("sticky");
 new IntersectionObserver(([e]) => barra.classList.toggle("off", e.isIntersecting))
   .observe(document.querySelector(".join"));
+
+  $("ano").textContent = new Date().getFullYear();

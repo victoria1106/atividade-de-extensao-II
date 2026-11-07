@@ -158,3 +158,6 @@ body{
   .d3{top:55%; left:calc((100vw - 960px)/4);  transform:translateX(-50%) rotate(7deg)}
   .d4{top:78%; right:calc((100vw - 960px)/4); transform:translateX(50%)  rotate(-8deg)}
 }
+
+footer{text-align:center}
+footer p{margin:0 0 4px}
