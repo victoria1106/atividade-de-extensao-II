@@ -101,3 +101,50 @@ new IntersectionObserver(([e]) => barra.classList.toggle("off", e.isIntersecting
   .observe(document.querySelector(".join"));
 
   $("ano").textContent = new Date().getFullYear();
+
+  /* ===== EMPRESAS DA VITRINE ===== */
+const EMPRESAS = [
+  {
+    nome: "Ângela Censi Acessórios",
+    cat: "Bijuterias/Artesanato",
+    logo: "imagens/LOGO.png",
+    descricao: "Elegância que inspira, brilho que transforma. Enviamos para todo Brasil.",
+    produtos: ["imagens/imagem1.png", "imagens/imagem2.png", "imagens/imagem3.png"],
+    whatsapp: "16988246683",
+    instagram: "angela_censi_biju",
+    site: "https://www.angelacensibiju.com.br",
+    email: "angelancensi@gmail.com"
+  }
+];
+
+const comHttp = u => /^https?:\/\//i.test(u) ? u : "https://" + u;
+
+function renderEmpresas(){
+  if(!EMPRESAS.length){ $("shop").hidden = true; return; }
+  $("empresas").innerHTML = EMPRESAS.map(e => {
+    const logo = e.logo
+      ? '<img class="emp-logo" src="' + esc(e.logo) + '" alt="Logo de ' + esc(e.nome) + '">'
+      : '<span class="emp-ini" aria-hidden="true">' + esc(e.nome.charAt(0).toUpperCase()) + '</span>';
+
+    const fotos = (e.produtos || []).slice(0, 3).map((src, i) =>
+      '<img src="' + esc(src) + '" alt="' + esc(e.nome) + ', produto ' + (i + 1) + '" loading="lazy" onerror="this.style.display=\'none\'">'
+    ).join("");
+
+    const links = [];
+    const zap = String(e.whatsapp || "").replace(/\D/g, "");
+    if(zap) links.push('<a class="zap" target="_blank" rel="noopener" href="https://wa.me/55' + zap + '?text=' + encodeURIComponent("Olá! Vi " + e.nome + " na vitrine e queria saber mais.") + '">WhatsApp</a>');
+    const insta = String(e.instagram || "").replace(/[^\w.]/g, "");
+    if(insta) links.push('<a target="_blank" rel="noopener" href="https://instagram.com/' + insta + '">Instagram</a>');
+    if(e.facebook) links.push('<a target="_blank" rel="noopener" href="' + esc(comHttp(e.facebook)) + '">Facebook</a>');
+    if(e.site) links.push('<a target="_blank" rel="noopener" href="' + esc(comHttp(e.site)) + '">Site</a>');
+    if(e.email) links.push('<a href="mailto:' + esc(e.email) + '">E-mail</a>');
+
+    return '<article class="emp">' +
+      '<div class="emp-head">' + logo + '<div><p class="cat">' + esc(e.cat) + '</p><h3>' + esc(e.nome) + '</h3></div></div>' +
+      '<p class="emp-desc">' + esc(e.descricao) + '</p>' +
+      (fotos ? '<div class="emp-fotos">' + fotos + '</div>' : '') +
+      (links.length ? '<div class="emp-links">' + links.join("") + '</div>' : '') +
+      '</article>';
+  }).join("");
+}
+renderEmpresas();
